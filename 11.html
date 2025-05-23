@@ -33,13 +33,6 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    .top-image {
-      width: 100%;
-      border-radius: 15px;
-      margin-bottom: 30px;
-      box-shadow: 0 0 25px #00f0ff50;
-    }
-
     h1, h2 {
       font-family: 'Orbitron', sans-serif;
       text-align: center;
@@ -66,7 +59,20 @@
 
     .features-list {
       margin: 20px 0;
-      padding-left: 20px;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .features-list li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .features-list img {
+      width: 28px;
+      height: 28px;
+      margin-right: 12px;
     }
 
     .price {
@@ -119,8 +125,6 @@
 </head>
 <body>
   <div class="container">
-    <img src="https://ik.imagekit.io/uwsovop1b/icon.png?updatedAt=1747994242481" alt="Header Image" class="top-image" />
-
     <h1>🔥 Quotex Extension - Live UI</h1>
 
     <p>This premium Chrome extension transforms your Quotex demo account into a live-looking interface. Ideal for screenshots, videos, and training without risking real funds.</p>
@@ -137,14 +141,14 @@
 
     <h2>🚀 Extension Features</h2>
     <ul class="features-list">
-      <li>🎨 <strong>Quotex UI Refresh:</strong> Complete visual transformation into a professional, live-like interface.</li>
-      <li>🌐 <strong>Multi-language:</strong> Arabic, English, Portuguese and more coming.</li>
-      <li>💻 <strong>Multi-device Support:</strong> Works on Android, Tablets, Windows & Mac.</li>
-      <li>💱 <strong>All Currency Symbols Supported:</strong> $, €, ৳, ₹, ₨ and more.</li>
-      <li>💸 <strong>Withdraw Option Displayed:</strong> Realistic withdrawal button and UI.</li>
-      <li>🏆 <strong>Professional Leaderboard:</strong> Simulated leaderboard for realistic trader ranking.</li>
-      <li>🔧 <strong>All-in-One Configuration:</strong> 120+ tweakable settings for full control.</li>
-      <li>📩 <strong>Direct DM Support:</strong> Quick support at <strong>@traderjisanx</strong></li>
+      <li><img src="https://cdn-icons-png.flaticon.com/128/1828/1828884.png" alt="UI"> <strong>Quotex UI Refresh:</strong> Live-like interface transformation.</li>
+      <li><img src="https://cdn-icons-png.flaticon.com/128/545/545705.png" alt="Language"> <strong>Multi-language:</strong> Arabic, English, Portuguese and more.</li>
+      <li><img src="https://cdn-icons-png.flaticon.com/128/888/888879.png" alt="Devices"> <strong>Device Support:</strong> Android, Tablet, Windows, Mac.</li>
+      <li><img src="https://cdn-icons-png.flaticon.com/128/3514/3514491.png" alt="Currency"> <strong>Currency Support:</strong> $, €, ৳, ₹, ₨ and more.</li>
+      <li><img src="https://cdn-icons-png.flaticon.com/128/1034/1034155.png" alt="Withdraw"> <strong>Withdraw Option:</strong> Realistic button shown.</li>
+      <li><img src="https://cdn-icons-png.flaticon.com/128/3135/3135715.png" alt="Leaderboard"> <strong>Leaderboard:</strong> Professional trader ranking simulation.</li>
+      <li><img src="https://cdn-icons-png.flaticon.com/128/1828/1828911.png" alt="Settings"> <strong>All-in-One:</strong> 120+ tweakable options.</li>
+      <li><img src="https://cdn-icons-png.flaticon.com/128/2111/2111646.png" alt="Support"> <strong>DM Support:</strong> Contact <strong>@traderjisanx</strong> for help.</li>
     </ul>
   </div>
 </body>
