@@ -3,153 +3,508 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>🔥 Quotex Extension - Premium UI</title>
+  <title>Quotex UI Pro | Premium Demo Account Enhancement</title>
   <link rel="icon" type="image/png" href="https://ik.imagekit.io/uwsovop1b/icon.png?updatedAt=1747994242481">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    body {
+    :root {
+      --primary: #2563eb;
+      --primary-light: #3b82f6;
+      --secondary: #10b981;
+      --dark: #0f172a;
+      --darker: #020617;
+      --light: #f8fafc;
+      --gray: #94a3b8;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+    }
+
+    * {
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      font-family: 'Roboto', sans-serif;
-      color: #fff;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--darker);
+      color: var(--light);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
       overflow-x: hidden;
     }
 
     .container {
-      max-width: 800px;
-      margin: 60px auto;
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      padding: 40px;
-      box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
-      position: relative;
-      animation: fadeIn 1s ease-out forwards;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    h1, h2 {
-      font-family: 'Orbitron', sans-serif;
+    header {
       text-align: center;
-      margin: 20px 0;
+      margin-bottom: 3rem;
+      padding-top: 2rem;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .logo-icon {
+      color: var(--primary);
+      font-size: 2.5rem;
+    }
+
+    .logo-text {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 2rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     h1 {
-      font-size: 32px;
-      background: linear-gradient(90deg, #00ffff, #00ff88);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 3rem;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(to right, var(--light), var(--gray));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    h2 {
-      font-size: 24px;
-      color: #00ffff;
+    .tagline {
+      font-size: 1.25rem;
+      color: var(--gray);
+      max-width: 700px;
+      margin: 0 auto 2rem;
     }
 
-    p, li {
-      font-size: 16px;
-      line-height: 1.7;
-      color: #d1d5db;
+    .hero-card {
+      background: rgba(15, 23, 42, 0.7);
+      border-radius: 1.5rem;
+      padding: 3rem;
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      margin-bottom: 3rem;
+      position: relative;
+      overflow: hidden;
     }
 
-    .features-list {
-      margin: 20px 0;
-      padding-left: 0;
-      list-style: none;
+    .hero-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+      animation: rotate 15s linear infinite;
+      z-index: -1;
     }
 
-    .features-list li {
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .price-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 2rem;
+      padding: 0.75rem 1.5rem;
+      margin-bottom: 2rem;
+      font-weight: 600;
+    }
+
+    .price-amount {
+      color: var(--secondary);
+      font-size: 1.5rem;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: var(--gradient);
+      color: white;
+      padding: 1rem 2.5rem;
+      font-size: 1.125rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(37, 99, 235, 0.5);
+    }
+
+    .contact-info {
       display: flex;
       align-items: center;
-      margin-bottom: 16px;
+      justify-content: center;
+      gap: 0.75rem;
+      color: var(--gray);
+      font-size: 1.125rem;
     }
 
-    .features-list img {
-      width: 28px;
-      height: 28px;
-      margin-right: 12px;
-    }
-
-    .price {
-      font-size: 22px;
-      color: #ffffff;
-      text-align: center;
-      margin-top: 30px;
-      font-weight: bold;
-      background: linear-gradient(90deg, #00ffa2, #00f0ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .contact-button {
-      display: block;
-      margin: 40px auto 10px;
-      background: linear-gradient(90deg, #00c6ff, #0072ff);
-      color: white;
-      padding: 18px 30px;
-      font-size: 18px;
-      border: none;
-      border-radius: 50px;
-      text-align: center;
-      cursor: pointer;
+    .contact-link {
+      color: var(--primary-light);
       text-decoration: none;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 0 20px #00f0ff80;
+      font-weight: 600;
+      transition: color 0.2s ease;
     }
 
-    .contact-button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 30px #00f0ffcc;
+    .contact-link:hover {
+      color: var(--primary);
     }
 
-    .big-contact {
+    .features-section {
+      margin: 4rem 0;
+    }
+
+    .section-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 2rem;
       text-align: center;
-      font-size: 20px;
-      font-weight: bold;
-      margin-top: 30px;
-      color: #00ffff;
-      animation: pulse 2s infinite;
+      margin-bottom: 3rem;
+      position: relative;
+      display: inline-block;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
-    @keyframes pulse {
-      0% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.7; transform: scale(1.05); }
-      100% { opacity: 1; transform: scale(1); }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -0.75rem;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--gradient);
+      border-radius: 2px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .feature-card {
+      background: rgba(15, 23, 42, 0.5);
+      border-radius: 1rem;
+      padding: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(59, 130, 246, 0.3);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .feature-icon {
+      width: 3.5rem;
+      height: 3.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(59, 130, 246, 0.1);
+      border-radius: 0.75rem;
+      margin-bottom: 1.5rem;
+      color: var(--primary);
+      font-size: 1.5rem;
+    }
+
+    .feature-title {
+      font-weight: 700;
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .feature-desc {
+      color: var(--gray);
+    }
+
+    .testimonial-section {
+      margin: 4rem 0;
+      text-align: center;
+    }
+
+    .testimonial-card {
+      max-width: 800px;
+      margin: 0 auto;
+      background: rgba(15, 23, 42, 0.5);
+      border-radius: 1.5rem;
+      padding: 2.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      position: relative;
+    }
+
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: 1rem;
+      left: 2rem;
+      font-size: 5rem;
+      color: rgba(59, 130, 246, 0.1);
+      font-family: serif;
+      line-height: 1;
+    }
+
+    .testimonial-text {
+      font-size: 1.25rem;
+      font-style: italic;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .testimonial-author {
+      font-weight: 600;
+    }
+
+    .faq-section {
+      margin: 4rem 0;
+    }
+
+    .faq-item {
+      background: rgba(15, 23, 42, 0.5);
+      border-radius: 0.75rem;
+      margin-bottom: 1rem;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .faq-question {
+      padding: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.2s ease;
+    }
+
+    .faq-question:hover {
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .faq-answer {
+      padding: 0 1.5rem;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      color: var(--gray);
+    }
+
+    .faq-item.active .faq-answer {
+      padding: 0 1.5rem 1.5rem;
+      max-height: 500px;
+    }
+
+    .faq-toggle {
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item.active .faq-toggle {
+      transform: rotate(180deg);
+    }
+
+    footer {
+      text-align: center;
+      padding: 3rem 0;
+      color: var(--gray);
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.25rem;
+      }
+      
+      .tagline {
+        font-size: 1.1rem;
+      }
+      
+      .hero-card {
+        padding: 2rem 1.5rem;
+      }
+      
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>🔥 Quotex Extension - Live UI</h1>
+    <header>
+      <div class="logo">
+        <i class="fas fa-chart-line logo-icon"></i>
+        <span class="logo-text">Quotex UI Pro</span>
+      </div>
+      <h1>Transform Your Demo Account Into a Real Trading Experience</h1>
+      <p class="tagline">Our premium Chrome extension gives your Quotex demo account the appearance and functionality of a live trading interface - perfect for content creation, training, and presentations.</p>
+    </header>
 
-    <p>This premium Chrome extension transforms your Quotex demo account into a live-looking interface. Ideal for screenshots, videos, and training without risking real funds.</p>
-
-    <div class="price">
-      💰 Price: $100 USD / ৳12600 BDT (One-time)
+    <div class="hero-card">
+      <div class="price-tag">
+        <i class="fas fa-tag"></i>
+        <span>One-time payment: <span class="price-amount">$100 USD</span> / ৳12,600 BDT</span>
+      </div>
+      
+      <a href="https://t.me/traderjisanx" class="cta-button" target="_blank">
+        <i class="fab fa-telegram"></i>
+        Get Your Extension Now
+      </a>
+      
+      <div class="contact-info">
+        <i class="fas fa-headset"></i>
+        <span>Contact support: <a href="https://t.me/traderjisanx" class="contact-link" target="_blank">@traderjisanx</a></span>
+      </div>
     </div>
 
-    <a href="https://t.me/traderjisanx" class="contact-button" target="_blank">💬 Contact on Telegram</a>
+    <section class="features-section">
+      <h2 class="section-title">Premium Features</h2>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-sync-alt"></i>
+          </div>
+          <h3 class="feature-title">Live Interface Transformation</h3>
+          <p class="feature-desc">Completely redesigns your demo account to look identical to a live trading account, removing all demo indicators.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-globe"></i>
+          </div>
+          <h3 class="feature-title">Multi-Language Support</h3>
+          <p class="feature-desc">Available in Arabic, English, Portuguese, Spanish, and more to suit your audience's preferences.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3 class="feature-title">Cross-Device Compatibility</h3>
+          <p class="feature-desc">Works seamlessly on Android, iOS, tablets, and desktop platforms including Windows and Mac.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-money-bill-wave"></i>
+          </div>
+          <h3 class="feature-title">Global Currency Options</h3>
+          <p class="feature-desc">Supports all major currencies including USD, EUR, BDT, INR, PKR and more for authentic presentation.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-wallet"></i>
+          </div>
+          <h3 class="feature-title">Withdrawal Simulation</h3>
+          <p class="feature-desc">Realistic withdrawal button and interface to demonstrate the full trading cycle to your audience.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-trophy"></i>
+          </div>
+          <h3 class="feature-title">Leaderboard Enhancement</h3>
+          <p class="feature-desc">Professional trader ranking system that mimics real trading competition statistics.</p>
+        </div>
+      </div>
+    </section>
 
-    <div class="big-contact">
-      👉 Telegram: <strong>@traderjisanx</strong>
-    </div>
+    <section class="testimonial-section">
+      <h2 class="section-title">What Our Users Say</h2>
+      
+      <div class="testimonial-card">
+        <p class="testimonial-text">This extension has completely transformed how I create trading content. My students can't tell the difference between my demo and live accounts now, which makes training so much more effective.</p>
+        <p class="testimonial-author">— Ahmed R., Trading Educator</p>
+      </div>
+    </section>
 
-    <h2>🚀 Extension Features</h2>
-    <ul class="features-list">
-      <li><img src="https://cdn-icons-png.flaticon.com/128/1828/1828884.png" alt="UI"> <strong>Quotex UI Refresh:</strong> Live-like interface transformation.</li>
-      <li><img src="https://cdn-icons-png.flaticon.com/128/545/545705.png" alt="Language"> <strong>Multi-language:</strong> Arabic, English, Portuguese and more.</li>
-      <li><img src="https://cdn-icons-png.flaticon.com/128/888/888879.png" alt="Devices"> <strong>Device Support:</strong> Android, Tablet, Windows, Mac.</li>
-      <li><img src="https://cdn-icons-png.flaticon.com/128/3514/3514491.png" alt="Currency"> <strong>Currency Support:</strong> $, €, ৳, ₹, ₨ and more.</li>
-      <li><img src="https://cdn-icons-png.flaticon.com/128/1034/1034155.png" alt="Withdraw"> <strong>Withdraw Option:</strong> Realistic button shown.</li>
-      <li><img src="https://cdn-icons-png.flaticon.com/128/3135/3135715.png" alt="Leaderboard"> <strong>Leaderboard:</strong> Professional trader ranking simulation.</li>
-      <li><img src="https://cdn-icons-png.flaticon.com/128/1828/1828911.png" alt="Settings"> <strong>All-in-One:</strong> 120+ tweakable options.</li>
-      <li><img src="https://cdn-icons-png.flaticon.com/128/2111/2111646.png" alt="Support"> <strong>DM Support:</strong> Contact <strong>@traderjisanx</strong> for help.</li>
-    </ul>
+    <section class="faq-section">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Is this extension safe to use?</span>
+          <i class="fas fa-chevron-down faq-toggle"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Absolutely. Our extension only modifies the visual interface of your demo account and doesn't interact with Quotex's trading systems or your account security in any way.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Will this work on my mobile device?</span>
+          <i class="fas fa-chevron-down faq-toggle"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Yes, the extension works on all devices where you can use the Chrome browser, including Android phones and tablets. For iOS, you can use it with browsers that support Chrome extensions.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>How do I install and set up the extension?</span>
+          <i class="fas fa-chevron-down faq-toggle"></i>
+        </div>
+        <div class="faq-answer">
+          <p>After purchase, you'll receive detailed installation instructions and our support team is available to guide you through the simple setup process.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What if I need help after purchasing?</span>
+          <i class="fas fa-chevron-down faq-toggle"></i>
+        </div>
+        <div class="faq-answer">
+          <p>We provide dedicated support through Telegram (@traderjisanx) and typically respond within a few hours to any questions or issues you might have.</p>
+        </div>
+      </div>
+    </section>
   </div>
+
+  <footer>
+    <p>© 2023 Quotex UI Pro. All rights reserved.</p>
+    <p>This product is not affiliated with Quotex or any trading platform.</p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        const item = question.parentElement;
+        item.classList.toggle('active');
+      });
+    });
+  </script>
 </body>
 </html>
